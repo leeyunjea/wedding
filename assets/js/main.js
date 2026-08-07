@@ -242,8 +242,7 @@
 
   /* ── RSVP 모달 ──────────────────────────── */
   (function rsvp() {
-    var modal = $('#rsvpModal'), banner = $('#rsvpBanner'), form = $('#rsvpForm');
-    var KEY_HIDE = 'rsvpHideUntil', KEY_DONE = 'rsvpDone';
+    var modal = $('#rsvpModal'), form = $('#rsvpForm');
 
     function open() {
       modal.hidden = false;
@@ -285,25 +284,11 @@
       var list = JSON.parse(localStorage.getItem('rsvpList') || '[]');
       list.push(data);
       localStorage.setItem('rsvpList', JSON.stringify(list));
-      localStorage.setItem(KEY_DONE, '1');
 
       close();
-      if (banner) banner.hidden = true;
       toast('참석 여부가 전달되었습니다. 감사합니다!');
       form.reset();
       $('#policyBox').hidden = true;
-    });
-
-    // 하단 배너 — 이미 응답했거나 "오늘 하루 보지 않기" 상태면 숨김
-    var hideUntil = Number(localStorage.getItem(KEY_HIDE) || 0);
-    if (!localStorage.getItem(KEY_DONE) && Date.now() > hideUntil) {
-      setTimeout(function () { if (banner) banner.hidden = false; }, 2600);
-    }
-    var hideBtn = $('#bannerHide');
-    if (hideBtn) hideBtn.addEventListener('click', function () {
-      var t = new Date(); t.setHours(24, 0, 0, 0);
-      localStorage.setItem(KEY_HIDE, String(t.getTime()));
-      banner.hidden = true;
     });
   })();
 
