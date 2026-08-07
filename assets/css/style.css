@@ -15,6 +15,9 @@ input, textarea, select { font: inherit; color: inherit; }
 fieldset { border: 0; }
 summary::-webkit-details-marker { display: none; }
 
+/* hidden 속성이 아래 컴포넌트의 display 선언에 밀리지 않도록 강제 */
+[hidden] { display: none !important; }
+
 :root {
   --ink:        #3a3733;   /* 본문 */
   --ink-soft:   #7d7871;   /* 보조 텍스트 */
