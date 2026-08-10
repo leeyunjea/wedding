@@ -16,7 +16,7 @@ window.WEDDING = {
     lng: 126.967382,
   },
 
-  /* 카카오맵 JS 키. 비워두면 지도 자리에 안내 박스가 표시됩니다.
+  /* 카카오맵 JS 키. 비워두면 약도 이미지만 표시됩니다(키를 넣으면 약도 아래에 지도 추가).
      https://developers.kakao.com > 내 애플리케이션 > JavaScript 키
      ※ 플랫폼 > Web 에 배포 도메인 등록 필요 */
   kakaoMapKey: '',

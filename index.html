@@ -220,9 +220,14 @@
     <p class="loc__addr" id="locAddr">서울특별시 중구 청파로 463 한국경제신문사빌딩</p>
     <p class="loc__tel"><a href="tel:02-312-6800">02-312-6800</a></p>
 
-    <div class="loc__map" id="map">
-      <p class="loc__mapNote">지도를 표시하려면 <code>assets/js/config.js</code>에<br>카카오맵 JavaScript 키를 입력해주세요.</p>
-    </div>
+    <figure class="loc__sketch">
+      <a href="assets/img/location-full.jpg" target="_blank" rel="noopener">
+        <img src="assets/img/location-map.jpg" alt="루이비스웨딩 중구점 약도 — 충정로역 4번 출구 도보 3분" loading="lazy">
+      </a>
+      <figcaption>약도를 누르면 크게 볼 수 있어요</figcaption>
+    </figure>
+
+    <div class="loc__map" id="map" hidden></div>
 
     <div class="loc__navi">
       <a class="chip" id="naviTmap" href="#">티맵</a>
@@ -233,18 +238,28 @@
 
     <dl class="loc__ways">
       <div>
-        <dt>지하철</dt>
-        <dd>2·5호선 충정로역 4번 출구 도보 3분<br>한국경제신문사빌딩 18층</dd>
+        <dt>버스</dt>
+        <dd>한국경제신문사 · 서소문역사공원 하차</dd>
       </div>
       <div>
-        <dt>셔틀버스</dt>
-        <dd>1·4호선 서울역 서부광장 출구<br>롯데마트 앞에서 10분 간격 운행</dd>
+        <dt>지하철</dt>
+        <dd>2·5호선 충정로역 4번 출구 도보 3분<br>1·4호선 서울역 1번 출구 도보 15분</dd>
       </div>
       <div>
         <dt>자가용</dt>
-        <dd>내비게이션에 “루이비스웨딩 중구점” 검색<br>건물 주차장 540대 · 2시간 무료</dd>
+        <dd>내비게이션에 “루이비스웨딩 중구점” 검색<br>본 건물 지하주차장 이용, 2시간 무료</dd>
+      </div>
+      <div>
+        <dt>셔틀버스</dt>
+        <dd>서울역 하차 후 서부역 롯데마트 앞<br>10분 배차 운행</dd>
       </div>
     </dl>
+
+    <p class="loc__caution">
+      루이비스 웨딩홀은 동일한 이름의 지점이 여러 곳 있으니,<br>
+      소중한 걸음에 혼선 없으시도록 반드시 <b>‘중구점’</b>으로<br>
+      방문 부탁드립니다.
+    </p>
   </section>
 
   <!-- ══════════ 9. 안내사항 ══════════ -->

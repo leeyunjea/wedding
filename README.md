@@ -31,12 +31,10 @@ assets/img/thumb/       썸네일용 700px       (01~19)
 
 | 위치 | 내용 |
 |---|---|
-| `assets/js/config.js` | 예식장 이름·주소·전화·위경도 |
 | `index.html` 초대말씀 | 혼주(부모님) 성함 |
 | `index.html` 초대말씀 | 신랑·신부 연락처 (`tel:`) |
 | `index.html` 소개 | 생년월일, 특징 태그 |
 | `index.html` 함께한 시간 | 4개 에피소드 문구 |
-| `index.html` 오시는 길 | 버스/지하철/자가용 안내 |
 | `index.html` 안내사항 | 포토부스·주차·답례품 문구 |
 | `index.html` 계좌 | 은행명·계좌번호 6건 |
 
@@ -44,8 +42,10 @@ assets/img/thumb/       썸네일용 700px       (01~19)
 
 ## 선택 설정 (`assets/js/config.js`)
 
-- **지도** — `kakaoMapKey`에 [카카오 개발자센터](https://developers.kakao.com) JavaScript 키 입력.
-  플랫폼 > Web에 배포 도메인 등록 필요. 비워두면 지도 자리에 안내 문구가 표시됩니다.
+- **지도** — 오시는 길에는 예식장 약도 이미지(`assets/img/location-map.jpg`, 탭하면
+  `location-full.jpg` 원본)가 항상 표시됩니다. 여기에 더해 카카오맵을 띄우려면
+  `kakaoMapKey`에 [카카오 개발자센터](https://developers.kakao.com) JavaScript 키 입력
+  (플랫폼 > Web에 배포 도메인 등록 필요). 비워두면 약도만 표시됩니다.
 - **배경음악** — `assets/audio/`에 mp3를 넣고 `bgm: 'assets/audio/bgm.mp3'`.
   비워두면 우측 상단 BGM 버튼이 숨겨집니다.
 - **게스트스냅** — `snapUrl`에 구글포토 공유앨범 링크 등. 예식 당일부터 버튼이 활성화됩니다.

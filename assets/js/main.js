@@ -203,7 +203,9 @@
     s.onload = function () {
       window.kakao.maps.load(function () {
         var box = $('#map');
+        if (!box) return;
         box.innerHTML = '';
+        box.hidden = false;
         box.classList.add('is-loaded');
         var pos = new kakao.maps.LatLng(v.lat, v.lng);
         var map = new kakao.maps.Map(box, { center: pos, level: 4 });
