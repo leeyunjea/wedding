@@ -34,7 +34,6 @@ assets/img/thumb/       썸네일용 700px       (01~19)
 | `index.html` 초대말씀 | 혼주(부모님) 성함 |
 | `index.html` 초대말씀 | 신랑·신부 연락처 (`tel:`) |
 | `index.html` 소개 | 생년월일, 특징 태그 |
-| `index.html` 함께한 시간 | 4개 에피소드 문구 |
 | `index.html` 안내사항 | 포토부스·주차·답례품 문구 |
 | `index.html` 계좌 | 은행명·계좌번호 6건 |
 
@@ -48,7 +47,6 @@ assets/img/thumb/       썸네일용 700px       (01~19)
   (플랫폼 > Web에 배포 도메인 등록 필요). 비워두면 약도만 표시됩니다.
 - **배경음악** — `assets/audio/`에 mp3를 넣고 `bgm: 'assets/audio/bgm.mp3'`.
   비워두면 우측 상단 BGM 버튼이 숨겨집니다.
-- **게스트스냅** — `snapUrl`에 구글포토 공유앨범 링크 등. 예식 당일부터 버튼이 활성화됩니다.
 
 ## ⚠️ RSVP · 방명록은 아직 로컬 저장입니다
 

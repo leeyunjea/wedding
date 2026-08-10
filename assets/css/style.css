@@ -157,7 +157,6 @@ body {
 .sec { padding: var(--sec-y) var(--pad); text-align: center; }
 .sec--invite,
 .sec--calendar,
-.sec--snap,
 .sec--rsvp,
 .sec--account { background: var(--cream); }
 
@@ -299,54 +298,7 @@ body {
 .cal__dday b { font-weight: 700; }
 
 /* ══════════════════════════════════════════
-   7. Our Story
-   ══════════════════════════════════════════ */
-.story { position: relative; text-align: left; }
-.story::before {
-  content: ''; position: absolute; left: 11px; top: 12px; bottom: 12px;
-  width: 1px; background: var(--line);
-}
-.story__item {
-  position: relative; padding-left: 38px; padding-bottom: 34px;
-}
-.story__item:last-child { padding-bottom: 0; }
-.story__item::before {
-  content: ''; position: absolute; left: 7px; top: 8px;
-  width: 9px; height: 9px; border-radius: 50%;
-  background: #fff; border: 1px solid var(--bride);
-}
-.story__photo { border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
-.story__photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.story__step {
-  font-family: var(--ff-en); font-size: 13px; letter-spacing: .18em;
-  color: var(--bride);
-}
-.story__desc { margin-top: 6px; font-size: 14.5px; line-height: 1.9; color: var(--ink); }
-
-/* ══════════════════════════════════════════
-   8. Guest Snap
-   ══════════════════════════════════════════ */
-.snap__lead { font-size: 14.5px; color: var(--ink); }
-.snap__card {
-  margin: 22px auto 24px; max-width: 330px; padding: 24px 22px;
-  background: #fff; border: 1px solid var(--line); border-radius: 3px;
-  text-align: left;
-}
-.snap__title { font-size: 13.5px; color: var(--point); letter-spacing: .01em; }
-.snap__list { margin-top: 10px; counter-reset: s; }
-.snap__list li {
-  counter-increment: s; font-size: 13.5px; color: var(--ink-soft); line-height: 2;
-}
-.snap__list li::before { content: counter(s) '. '; color: var(--bride); }
-.snap__gift {
-  margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line);
-  font-size: 13px; color: var(--ink-soft); line-height: 1.8; text-align: center;
-}
-.snap__note { margin-top: 12px; font-size: 12px; color: var(--ink-faint); }
-.btn[disabled] { background: var(--line); color: var(--ink-faint); cursor: default; }
-
-/* ══════════════════════════════════════════
-   9. Gallery
+   7. Gallery
    ══════════════════════════════════════════ */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
 .gallery__cell { display: block; overflow: hidden; background: var(--line-soft); }
@@ -382,7 +334,7 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   10. Location
+   8. Location
    ══════════════════════════════════════════ */
 .loc__name { font-size: 17px; color: var(--ink); }
 .loc__name span { font-size: 14px; color: var(--ink-soft); }
@@ -402,7 +354,6 @@ body {
   background: var(--line-soft); border: 1px solid var(--line);
   display: grid; place-items: center;
 }
-.loc__map[hidden] { display: none; }
 .loc__map.is-loaded { display: block; }
 .loc__map img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -423,7 +374,7 @@ body {
 .loc__caution b { color: var(--point); }
 
 /* ══════════════════════════════════════════
-   11. Information (tabs)
+   9. Information (tabs)
    ══════════════════════════════════════════ */
 .tabs { display: flex; gap: 6px; justify-content: center; }
 .tabs__btn {
@@ -440,7 +391,7 @@ body {
 .tabs__panel .em { color: var(--ink); font-size: 13.5px; }
 
 /* ══════════════════════════════════════════
-   12. RSVP
+   10. RSVP
    ══════════════════════════════════════════ */
 .rsvp__text { font-size: 14.5px; line-height: 2; color: var(--ink-soft); margin-bottom: 32px; }
 
@@ -494,7 +445,7 @@ body {
 .rsvp__policyBox b { font-weight: 400; color: var(--ink); }
 
 /* ══════════════════════════════════════════
-   13. Account
+   11. Account
    ══════════════════════════════════════════ */
 .acc__lead { font-size: 14px; line-height: 1.95; color: var(--ink-soft); }
 .acc { margin-top: 30px; text-align: left; }
@@ -526,7 +477,7 @@ body {
 .acc__copy:active { background: var(--point); border-color: var(--point); color: #fff; }
 
 /* ══════════════════════════════════════════
-   14. Guestbook
+   12. Guestbook
    ══════════════════════════════════════════ */
 .gb__lead { font-size: 14px; color: var(--ink-soft); }
 .gb__form { margin-top: 24px; text-align: left; }
@@ -554,7 +505,7 @@ body {
 .gb__more { display: block; margin: 18px auto 0; font-size: 13px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
 
 /* ══════════════════════════════════════════
-   15. Footer
+   13. Footer
    ══════════════════════════════════════════ */
 .footer {
   padding: 60px var(--pad) 90px; text-align: center;
@@ -569,7 +520,7 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   16. BGM · Toast
+   14. BGM · Toast
    ══════════════════════════════════════════ */
 .bgm {
   position: fixed; top: 14px; z-index: 70;

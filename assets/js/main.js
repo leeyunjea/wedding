@@ -109,27 +109,6 @@
     return ap + ' ' + h12 + '시' + (mi ? ' ' + mi + '분' : '');
   }
 
-  /* ── 게스트스냅 ─────────────────────────── */
-  (function snap() {
-    var btn = $('#snapBtn'), note = $('#snapNote');
-    if (!btn) return;
-    var open = !isNaN(weddingAt) && Date.now() >= new Date(weddingAt).setHours(0, 0, 0, 0);
-
-    if (!CFG.snapUrl) {
-      btn.disabled = true;
-      if (note) note.textContent = '업로드 링크 준비 중입니다';
-      return;
-    }
-    if (!open) {
-      btn.disabled = true;
-      if (note) note.textContent =
-        weddingAt.getMonth() + 1 + '월 ' + weddingAt.getDate() + '일부터 업로드가 가능합니다';
-      return;
-    }
-    if (note) note.hidden = true;
-    btn.addEventListener('click', function () { window.open(CFG.snapUrl, '_blank', 'noopener'); });
-  })();
-
   /* ── 갤러리 라이트박스 ──────────────────── */
   (function gallery() {
     var cells = $$('#gallery .gallery__cell');
