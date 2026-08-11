@@ -211,36 +211,19 @@
     <div class="tabs" id="infoTabs">
       <button type="button" class="tabs__btn is-on" data-tab="booth">포토부스</button>
       <button type="button" class="tabs__btn" data-tab="park">주차안내</button>
-      <button type="button" class="tabs__btn" data-tab="gift">답례품</button>
     </div>
 
     <div class="tabs__panel is-on" data-panel="booth">
       <p>소중한 날을 기록할 수 있도록<br>포토부스를 준비했습니다.</p>
-      <p>신랑, 신부와 함께 사진을 찍어주세요.<br>한 장은 <b>방명록</b>에, 한 장은 <b>추억</b>으로 간직해주세요.</p>
+      <p>신랑, 신부와 함께 사진을 찍어주세요.<br>소중한 <b>추억</b>으로 간직해주세요.</p>
     </div>
     <div class="tabs__panel" data-panel="park">
       <p>예식장 지하주차장 이용이 가능합니다.<br>주차 등록은 안내데스크에서 도와드립니다.</p>
       <p class="em">🚗 2시간 무료 주차</p>
     </div>
-    <div class="tabs__panel" data-panel="gift">
-      <p>계절에 맞는 꽃으로 꽃다발을 만들어<br>예식 후 하객분들께 감사의 마음을 담아<br>답례품으로 나누어 드릴 예정이니,<br>저희가 준비한 마음을 품어가세요.</p>
-    </div>
   </section>
 
-  <!-- ══════════ 8. 참석 여부 ══════════ -->
-  <section class="sec sec--rsvp" data-reveal>
-    <p class="sec__en">R.S.V.P</p>
-    <h2 class="sec__ko">참석 여부 전달</h2>
-
-    <p class="rsvp__text">
-      소중한 시간을 내어 결혼식에<br>참석해주시는 모든 분들께 감사드립니다.<br><br>
-      원활한 준비를 위해<br>참석 여부를 회신해 주시면<br>더욱 감사하겠습니다.
-    </p>
-
-    <button type="button" class="btn btn--fill" data-open-rsvp>참석 여부 전달하기</button>
-  </section>
-
-  <!-- ══════════ 9. 마음 전하실 곳 ══════════ -->
+  <!-- ══════════ 8. 마음 전하실 곳 ══════════ -->
   <section class="sec sec--account" data-reveal>
     <p class="sec__en">Account</p>
     <h2 class="sec__ko">마음 전하실 곳</h2>
@@ -291,25 +274,6 @@
     </div>
   </section>
 
-  <!-- ══════════ 10. 방명록 ══════════ -->
-  <section class="sec sec--guestbook" data-reveal>
-    <p class="sec__en">Guest Book</p>
-    <h2 class="sec__ko">방명록</h2>
-    <p class="gb__lead">축하의 한마디를 남겨주세요</p>
-
-    <form class="gb__form" id="gbForm">
-      <div class="gb__row">
-        <input type="text" name="name" placeholder="이름" maxlength="10" required>
-        <input type="password" name="pw" placeholder="비밀번호 (삭제용)" maxlength="20" required>
-      </div>
-      <textarea name="msg" placeholder="축하 메시지를 남겨주세요" maxlength="200" rows="3" required></textarea>
-      <button type="submit" class="btn btn--line">작성하기</button>
-    </form>
-
-    <ul class="gb__list" id="gbList"></ul>
-    <button type="button" class="gb__more" id="gbMore" hidden>더보기</button>
-  </section>
-
   <!-- ══════════ 푸터 ══════════ -->
   <footer class="footer" data-reveal>
     <p class="footer__msg">저희 둘, 행복하게 잘 살겠습니다 :)</p>
@@ -333,77 +297,6 @@
   <img class="lb__img" id="lbImg" src="" alt="">
   <button type="button" class="lb__nav lb__nav--next" data-lb-next aria-label="다음">›</button>
   <p class="lb__count" id="lbCount"></p>
-</div>
-
-<!-- ══════════ RSVP 모달 ══════════ -->
-<div class="modal" id="rsvpModal" hidden>
-  <div class="modal__dim" data-close-rsvp></div>
-  <div class="modal__box" role="dialog" aria-modal="true" aria-label="참석 여부 전달">
-    <button type="button" class="modal__x" data-close-rsvp aria-label="닫기">✕</button>
-
-    <p class="modal__en">R.S.V.P</p>
-    <h3 class="modal__title">참석 여부 전달</h3>
-    <p class="modal__sub">신랑 <b>박성민</b> · 신부 <b>이윤재</b><br>2026년 11월 21일 토요일 오후 4시 50분</p>
-
-    <form id="rsvpForm" class="rsvp">
-      <fieldset class="rsvp__field">
-        <legend>어느 측 하객이신가요? <i>*</i></legend>
-        <div class="rsvp__opts">
-          <label><input type="radio" name="side" value="신랑측" required><span>신랑측</span></label>
-          <label><input type="radio" name="side" value="신부측"><span>신부측</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset class="rsvp__field">
-        <legend>참석 여부 <i>*</i></legend>
-        <div class="rsvp__opts">
-          <label><input type="radio" name="attend" value="참석" required><span>참석</span></label>
-          <label><input type="radio" name="attend" value="불참석"><span>불참석</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset class="rsvp__field">
-        <legend>식사 여부 <i>*</i></legend>
-        <div class="rsvp__opts">
-          <label><input type="radio" name="meal" value="식사함" required><span>식사함</span></label>
-          <label><input type="radio" name="meal" value="식사안함"><span>식사안함</span></label>
-          <label><input type="radio" name="meal" value="미정"><span>미정</span></label>
-        </div>
-      </fieldset>
-
-      <label class="rsvp__label">성함 <i>*</i>
-        <input type="text" name="name" maxlength="10" required placeholder="성함을 입력해주세요">
-      </label>
-
-      <label class="rsvp__label">연락처 <i>*</i>
-        <input type="tel" name="phone" inputmode="numeric" required placeholder="010-0000-0000">
-      </label>
-
-      <label class="rsvp__label">동행인 수 (본인 제외)
-        <input type="number" name="companion" min="0" max="20" value="0">
-      </label>
-
-      <label class="rsvp__label">전달사항
-        <textarea name="memo" rows="2" maxlength="200" placeholder="신랑 신부에게 전할 말씀을 남겨주세요"></textarea>
-      </label>
-
-      <label class="rsvp__agree">
-        <input type="checkbox" name="agree" required>
-        <span>(필수) 개인정보 수집 및 활용에 동의합니다.
-          <button type="button" class="rsvp__policy" id="policyBtn">자세히보기</button>
-        </span>
-      </label>
-
-      <div class="rsvp__policyBox" id="policyBox" hidden>
-        <p><b>[수집 항목]</b> 이름, 연락처 등 RSVP에 입력된 항목</p>
-        <p><b>[이용 목적]</b> 결혼식 참석 여부 확인 및 관련 서비스 제공</p>
-        <p><b>[보유 기간]</b> 동의일로부터 청첩장 유효기간 동안</p>
-        <p><b>[거부 권리]</b> 동의를 거부하실 수 있으며, 거부 시 회신이 불가합니다.</p>
-      </div>
-
-      <button type="submit" class="btn btn--fill">전달하기</button>
-    </form>
-  </div>
 </div>
 
 <div class="toast" id="toast" hidden></div>

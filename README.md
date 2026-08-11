@@ -19,7 +19,7 @@ python3 -m http.server 4321
 index.html              전체 마크업 (섹션별 주석 구분)
 assets/css/style.css    스타일 — :root에 컬러 토큰
 assets/js/config.js     ★ 날짜·예식장·지도키·BGM 설정
-assets/js/main.js       캘린더/갤러리/RSVP/방명록/공유 로직
+assets/js/main.js       캘린더/갤러리/지도/공유 로직
 assets/img/cover.jpg    커버 (01번 = 원본 01 KJH_5460.jpg)
 assets/img/gallery/     라이트박스용 1600px  (01~19)
 assets/img/thumb/       썸네일용 700px       (01~19)
@@ -34,7 +34,7 @@ assets/img/thumb/       썸네일용 700px       (01~19)
 | `index.html` 초대말씀 | 혼주(부모님) 성함 |
 | `index.html` 초대말씀 | 신랑·신부 연락처 (`tel:`) |
 | `index.html` 소개 | 생년월일, 특징 태그 |
-| `index.html` 안내사항 | 포토부스·주차·답례품 문구 |
+| `index.html` 안내사항 | 포토부스·주차 문구 |
 | `index.html` 계좌 | 은행명·계좌번호 6건 |
 
 `○○` 로 표시된 곳이 전부 placeholder입니다.
@@ -47,15 +47,6 @@ assets/img/thumb/       썸네일용 700px       (01~19)
   (플랫폼 > Web에 배포 도메인 등록 필요). 비워두면 약도만 표시됩니다.
 - **배경음악** — `assets/audio/`에 mp3를 넣고 `bgm: 'assets/audio/bgm.mp3'`.
   비워두면 우측 상단 BGM 버튼이 숨겨집니다.
-
-## ⚠️ RSVP · 방명록은 아직 로컬 저장입니다
-
-현재 두 기능 모두 **브라우저 localStorage**에만 저장됩니다.
-하객이 남긴 내용이 신랑·신부에게 전달되지 않으니, 실제 배포 전 백엔드 연결이 필요합니다.
-
-가장 간단한 방법은 **Google Apps Script + 스프레드시트**입니다.
-`main.js`의 RSVP `submit` 핸들러에서 localStorage 저장 대신 `fetch(POST)`로 바꾸면 됩니다.
-(방명록은 조회도 필요하므로 GET 엔드포인트도 함께 필요)
 
 ## 배포
 
