@@ -22,5 +22,5 @@ window.WEDDING = {
   kakaoMapKey: '',
 
   /* 배경음악 파일 경로. 비워두면 BGM 버튼이 숨겨집니다. */
-  bgm: '', // 예: 'assets/audio/bgm.mp3'
+  bgm: 'assets/audio/bgm.mp3',
 };
