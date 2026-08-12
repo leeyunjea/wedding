@@ -249,18 +249,28 @@
     audio.volume = 0.5;
     btn.hidden = false;
 
+    var autoEvts = ['pointerdown', 'touchstart', 'keydown'];
+    function removeAutoListeners() {
+      autoEvts.forEach(function (e) { document.removeEventListener(e, onFirstInteract); });
+    }
     function play() {
-      audio.play().then(function () { btn.classList.add('is-on'); }).catch(function () {});
+      audio.play().then(function () {
+        btn.classList.add('is-on');
+        removeAutoListeners();
+      }).catch(function () {});
     }
     btn.addEventListener('click', function () {
       if (audio.paused) play();
       else { audio.pause(); btn.classList.remove('is-on'); }
     });
-    // 브라우저 자동재생 정책상 첫 사용자 터치 후 재생 시도
-    document.addEventListener('click', function once() {
-      play();
-      document.removeEventListener('click', once);
-    }, { once: true });
+    // 접속 즉시 자동재생 시도 (카카오톡 인앱 브라우저 등 자동재생 허용 환경)
+    play();
+    // 자동재생이 차단된 브라우저: 첫 터치/클릭/키 입력 순간 바로 재생
+    function onFirstInteract(ev) {
+      if (btn.contains(ev.target)) return; // BGM 버튼은 자체 토글에 맡김
+      if (audio.paused) play();
+    }
+    autoEvts.forEach(function (e) { document.addEventListener(e, onFirstInteract, { passive: true }); });
   })();
 
 })();
