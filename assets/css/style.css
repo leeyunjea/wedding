@@ -356,6 +356,10 @@ body {
   font-size: 13px; letter-spacing: .06em; color: var(--point); margin-bottom: 6px;
 }
 .loc__ways dd { font-size: 13.5px; line-height: 1.9; color: var(--ink-soft); }
+.bus { margin-top: 10px; display: grid; gap: 5px; }
+.bus li { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: baseline; }
+.bus b { font-weight: 400; font-size: 12.5px; color: var(--point); }
+.bus span { font-size: 13px; line-height: 1.75; word-spacing: 2px; }
 
 .loc__caution {
   margin-top: 20px; padding: 16px; border-radius: 3px;
