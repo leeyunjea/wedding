@@ -210,6 +210,7 @@ body {
 }
 .invite__parents b { font-weight: 400; color: var(--ink); }
 .invite__parents span { font-size: 13px; color: var(--ink-faint); }
+.lily { font-size: 12px; opacity: .75; vertical-align: 1px; }
 
 .invite__call { margin-top: 28px; display: flex; gap: 8px; justify-content: center; }
 
