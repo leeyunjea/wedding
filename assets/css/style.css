@@ -80,19 +80,22 @@ body {
 
 /* 정원 */
 .intro__garden { position: absolute; inset: 0; }
+.garden--far { background: url("../img/garden.jpg") center / cover no-repeat; }
 .garden {
   position: absolute; inset: 0; width: 100%; height: 100%;
   transform-origin: 50% 24%;
   transform: perspective(1500px) rotateX(4deg) scale(1.08);
+  backface-visibility: hidden; will-change: transform;
   transition: transform 3.8s cubic-bezier(.42,0,.7,1);
 }
 .intro.is-fly .garden { transform: perspective(1500px) rotateX(0deg) scale(3.1); }
 
-/* 창살문 — 바깥쪽 기둥을 축으로 열림 */
-.gate { transition: transform 1.5s cubic-bezier(.5,0,.2,1), opacity .8s ease-in .9s; }
-.gate--l { transform-origin: 234px 430px; }
-.gate--r { transform-origin: 554px 430px; }
-.intro.is-gate .gate { transform: scaleX(.55); opacity: 0; }
+/* 창살문 — 바깥쪽 기둥을 축으로 안쪽으로 열림 (그림의 열린 문짝을 계속 덮고 있음) */
+.gate { transition: transform 1.7s cubic-bezier(.45,0,.2,1); }
+.gate--l { transform-origin: 216px 430px; }
+.gate--r { transform-origin: 572px 430px; }
+.intro.is-gate .gate--l { transform: scaleX(.55) skewY(-2.5deg); }
+.intro.is-gate .gate--r { transform: scaleX(.55) skewY(2.5deg); }
 
 .intro__bloom {
   position: absolute; inset: 0; opacity: 0;
