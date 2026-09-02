@@ -82,10 +82,10 @@ body {
 .intro__garden { position: absolute; inset: 0; }
 .garden {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  transform-origin: 50% 46%;
-  transition: transform 3.2s cubic-bezier(.4,0,.6,1);
+  transform-origin: 50% 34%;
+  transition: transform 3.8s cubic-bezier(.42,0,.7,1);
 }
-.intro.is-fly .garden { transform: scale(2.9); }
+.intro.is-fly .garden { transform: scale(3.4); }
 
 /* 창살문 — 바깥쪽 기둥을 축으로 열림 */
 .gate { transition: transform 1.5s cubic-bezier(.5,0,.2,1), opacity .8s ease-in .9s; }
@@ -95,8 +95,8 @@ body {
 
 .intro__bloom {
   position: absolute; inset: 0; opacity: 0;
-  background: radial-gradient(circle at 50% 46%, #fff 0, rgba(255,255,255,.96) 45%, rgba(255,255,255,.9) 100%);
-  transition: opacity 1.3s ease-in 1.9s;
+  background: radial-gradient(circle at 50% 34%, #fff 0, rgba(255,255,255,.98) 30%, rgba(255,255,255,.92) 70%, rgba(255,255,255,.88) 100%);
+  transition: opacity 2.1s cubic-bezier(.5,0,.9,.7) 1.7s;
 }
 .intro.is-fly .intro__bloom { opacity: 1; }
 
