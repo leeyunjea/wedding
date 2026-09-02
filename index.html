@@ -20,12 +20,67 @@
 </head>
 
 <body>
-<!-- ══════════ 로딩 ══════════ -->
-<div class="loader" id="loader">
-  <div class="loader__inner">
-    <p class="loader__en">Sung Min &amp; Yunjae</p>
-    <p class="loader__ko">2026. 11. 21</p>
+<!-- ══════════ 인트로 (봉투 → 정원 → 커버) ══════════ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="청첩장 열기">
+  <div class="intro__col">
+  <div class="intro__garden">
+    <svg class="garden garden--far" viewBox="0 0 480 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdfbf7"/><stop offset="1" stop-color="#e3eadb"/></linearGradient>
+        <radialGradient id="gSun"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="480" height="800" fill="url(#gSky)"/>
+      <circle cx="300" cy="230" r="180" fill="url(#gSun)"/>
+      <g fill="#c4d0b6"><ellipse cx="70" cy="530" rx="140" ry="80"/><ellipse cx="250" cy="550" rx="170" ry="65"/><ellipse cx="430" cy="535" rx="140" ry="85"/></g>
+      <g fill="#b3c2a4"><ellipse cx="120" cy="470" rx="24" ry="95"/><ellipse cx="365" cy="455" rx="28" ry="110"/><ellipse cx="290" cy="485" rx="18" ry="75"/><ellipse cx="30" cy="480" rx="20" ry="80"/></g>
+      <rect y="560" width="480" height="240" fill="#d6dfcb"/>
+    </svg>
+    <svg class="garden garden--mid" viewBox="0 0 480 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g fill="#9cae8c"><ellipse cx="50" cy="610" rx="120" ry="65"/><ellipse cx="430" cy="600" rx="125" ry="72"/></g>
+      <polygon points="192,640 288,640 420,800 60,800" fill="#ebe5d6"/>
+      <path d="M150 650V390a90 90 0 0 1 180 0v260Z" fill="#f4eee3" stroke="#e3dac9" stroke-width="2"/>
+      <path d="M172 650V392a68 68 0 0 1 136 0v258Z" fill="#e6ecd9"/>
+      <g><circle cx="136" cy="398" r="20" fill="#7e9370"/><circle cx="158" cy="384" r="18" fill="#95a886"/><circle cx="152" cy="404" r="15" fill="#6f8663"/><circle cx="143" cy="362" r="20" fill="#95a886"/><circle cx="165" cy="348" r="18" fill="#6f8663"/><circle cx="159" cy="368" r="15" fill="#7e9370"/><circle cx="162" cy="332" r="20" fill="#6f8663"/><circle cx="184" cy="318" r="18" fill="#7e9370"/><circle cx="178" cy="338" r="15" fill="#95a886"/><circle cx="192" cy="313" r="20" fill="#7e9370"/><circle cx="214" cy="299" r="18" fill="#95a886"/><circle cx="208" cy="319" r="15" fill="#6f8663"/><circle cx="227" cy="306" r="20" fill="#95a886"/><circle cx="249" cy="292" r="18" fill="#6f8663"/><circle cx="243" cy="312" r="15" fill="#7e9370"/><circle cx="263" cy="313" r="20" fill="#6f8663"/><circle cx="285" cy="299" r="18" fill="#7e9370"/><circle cx="279" cy="319" r="15" fill="#95a886"/><circle cx="293" cy="332" r="20" fill="#7e9370"/><circle cx="315" cy="318" r="18" fill="#95a886"/><circle cx="309" cy="338" r="15" fill="#6f8663"/><circle cx="312" cy="362" r="20" fill="#95a886"/><circle cx="334" cy="348" r="18" fill="#6f8663"/><circle cx="328" cy="368" r="15" fill="#7e9370"/><circle cx="320" cy="398" r="20" fill="#6f8663"/><circle cx="342" cy="384" r="18" fill="#7e9370"/><circle cx="336" cy="404" r="15" fill="#95a886"/><circle cx="138" cy="446" r="20" fill="#7e9370"/><circle cx="160" cy="432" r="18" fill="#95a886"/><circle cx="154" cy="452" r="15" fill="#6f8663"/><circle cx="318" cy="446" r="20" fill="#95a886"/><circle cx="340" cy="432" r="18" fill="#6f8663"/><circle cx="334" cy="452" r="15" fill="#7e9370"/><circle cx="138" cy="506" r="20" fill="#6f8663"/><circle cx="160" cy="492" r="18" fill="#7e9370"/><circle cx="154" cy="512" r="15" fill="#95a886"/><circle cx="318" cy="506" r="20" fill="#7e9370"/><circle cx="340" cy="492" r="18" fill="#95a886"/><circle cx="334" cy="512" r="15" fill="#6f8663"/><circle cx="138" cy="566" r="20" fill="#95a886"/><circle cx="160" cy="552" r="18" fill="#6f8663"/><circle cx="154" cy="572" r="15" fill="#7e9370"/><circle cx="318" cy="566" r="20" fill="#6f8663"/><circle cx="340" cy="552" r="18" fill="#7e9370"/><circle cx="334" cy="572" r="15" fill="#95a886"/></g>
+      <g><circle cx="144" cy="388" r="8" fill="#fff"/><circle cx="160" cy="400" r="5" fill="#d3a3a3"/><circle cx="151" cy="352" r="7" fill="#d3a3a3"/><circle cx="167" cy="364" r="5" fill="#fff"/><circle cx="170" cy="322" r="7" fill="#b87272"/><circle cx="186" cy="334" r="5" fill="#fff"/><circle cx="200" cy="303" r="8" fill="#fff"/><circle cx="216" cy="315" r="5" fill="#d3a3a3"/><circle cx="235" cy="296" r="7" fill="#d3a3a3"/><circle cx="251" cy="308" r="5" fill="#fff"/><circle cx="271" cy="303" r="7" fill="#b87272"/><circle cx="287" cy="315" r="5" fill="#fff"/><circle cx="301" cy="322" r="8" fill="#fff"/><circle cx="317" cy="334" r="5" fill="#d3a3a3"/><circle cx="320" cy="352" r="7" fill="#d3a3a3"/><circle cx="336" cy="364" r="5" fill="#fff"/><circle cx="328" cy="388" r="7" fill="#b87272"/><circle cx="344" cy="400" r="5" fill="#fff"/><circle cx="146" cy="436" r="8" fill="#fff"/><circle cx="162" cy="448" r="5" fill="#d3a3a3"/><circle cx="326" cy="436" r="7" fill="#d3a3a3"/><circle cx="342" cy="448" r="5" fill="#fff"/><circle cx="146" cy="496" r="7" fill="#b87272"/><circle cx="162" cy="508" r="5" fill="#fff"/><circle cx="326" cy="496" r="8" fill="#fff"/><circle cx="342" cy="508" r="5" fill="#d3a3a3"/><circle cx="146" cy="556" r="7" fill="#d3a3a3"/><circle cx="162" cy="568" r="5" fill="#fff"/><circle cx="326" cy="556" r="7" fill="#b87272"/><circle cx="342" cy="568" r="5" fill="#fff"/></g>
+    </svg>
+    <svg class="garden garden--near" viewBox="0 0 480 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g fill="#576645">
+        <path d="M-20 800C40 690 130 660 210 720 120 700 60 740-20 800Z"/>
+        <path d="M500 800C440 680 350 660 270 730 360 700 430 740 500 800Z"/>
+      </g>
+      <g fill="#38503a">
+        <path d="M-20 800C30 730 90 720 150 770 90 760 40 780-20 800Z"/>
+        <path d="M500 800C450 720 390 715 330 770 390 755 450 780 500 800Z"/>
+      </g>
+      <g fill="#d3a3a3"><circle cx="70" cy="700" r="18"/><circle cx="420" cy="690" r="20"/><circle cx="110" cy="745" r="14"/></g>
+      <g fill="#b87272"><circle cx="70" cy="700" r="9"/><circle cx="420" cy="690" r="10"/><circle cx="110" cy="745" r="7"/><circle cx="395" cy="740" r="12"/></g>
+      <g fill="#fff"><circle cx="40" cy="735" r="10"/><circle cx="450" cy="735" r="11"/><circle cx="395" cy="740" r="5"/></g>
+    </svg>
+    <div class="intro__bloom"></div>
   </div>
+  <div class="door door--l"></div>
+  <div class="door door--r"></div>
+  <span class="band"></span>
+  <svg class="bow" viewBox="0 0 260 120" aria-hidden="true">
+    <defs>
+      <linearGradient id="bwL" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fffdf9"/><stop offset=".45" stop-color="#efe6d6"/><stop offset="1" stop-color="#fdf9f2"/>
+      </linearGradient>
+      <linearGradient id="bwR" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fffdf9"/><stop offset=".45" stop-color="#efe6d6"/><stop offset="1" stop-color="#fdf9f2"/>
+      </linearGradient>
+      <linearGradient id="bwK" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fffefb"/><stop offset="1" stop-color="#e6dccb"/>
+      </linearGradient>
+    </defs>
+    <path d="M128 56C104 30 66 22 40 34 18 44 20 70 44 78c26 9 62 3 84-14Z" fill="url(#bwL)"/>
+    <path d="M132 56c24-26 62-34 88-22 22 10 20 36-4 44-26 9-62 3-84-14Z" fill="url(#bwR)"/>
+    <path d="M122 64 96 116l16-6 12-22Z" fill="url(#bwL)"/>
+    <path d="M138 64l26 52-16-6-12-22Z" fill="url(#bwR)"/>
+    <ellipse cx="130" cy="58" rx="15" ry="17" fill="url(#bwK)"/>
+  </svg>
+  </div>
+  <p class="intro__hint">터치하여 열어보세요</p>
 </div>
 
 <main class="page" id="page">

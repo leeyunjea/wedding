@@ -65,24 +65,70 @@ body {
 }
 
 /* ══════════════════════════════════════════
-   1. Loader
+   1. Intro (봉투 → 정원 → 커버)
    ══════════════════════════════════════════ */
-.loader {
+.intro {
   position: fixed; inset: 0; z-index: 100;
-  display: grid; place-items: center;
-  background: var(--bg);
-  transition: opacity .8s var(--ease), visibility .8s;
+  background: var(--cream); overflow: hidden;
+  touch-action: none; overscroll-behavior: contain;
+  transition: opacity 1.2s var(--ease), visibility 1.2s;
 }
-.loader.is-done { opacity: 0; visibility: hidden; }
-.loader__inner { text-align: center; animation: fadeUp 1.2s var(--ease) both; }
-.loader__en {
-  font-family: var(--ff-en); font-size: 30px; font-style: italic;
-  color: var(--point); letter-spacing: .04em; line-height: 1.3;
+.intro.is-done { opacity: 0; visibility: hidden; }
+
+/* 인트로 전체를 페이지 폭(480px) 컬럼 안에서만 */
+.intro__col { position: absolute; inset: 0; margin: 0 auto; max-width: var(--page-w); overflow: hidden; }
+
+/* 정원 */
+.intro__garden { position: absolute; inset: 0; }
+.garden { position: absolute; inset: 0; width: 100%; height: 100%; transform-origin: 50% 62%; }
+.garden--far  { transition: transform 2.8s cubic-bezier(.4,0,.6,1); }
+.garden--mid  { transition: transform 2.8s cubic-bezier(.45,0,.55,1); }
+.garden--near { transition: transform 2.4s cubic-bezier(.5,0,.8,.4), opacity 1.6s ease-in .5s; }
+.intro.is-fly .garden--far  { transform: scale(1.35); }
+.intro.is-fly .garden--mid  { transform: scale(2.6) translateY(4%); }
+.intro.is-fly .garden--near { transform: scale(5) translateY(12%); opacity: 0; }
+.intro__bloom {
+  position: absolute; inset: 0; opacity: 0;
+  background: radial-gradient(circle at 50% 50%, #fff 0, rgba(255,255,255,.95) 45%, rgba(255,255,255,.85) 100%);
+  transition: opacity 1.1s ease-in 1.5s;
 }
-.loader__ko {
-  margin-top: 14px; font-size: 12px; letter-spacing: .35em;
-  color: var(--ink-faint);
+.intro.is-fly .intro__bloom { opacity: 1; }
+
+/* 종이 커버 — 가운데 이음선에서 양쪽으로 열림 */
+.door {
+  position: absolute; top: 0; bottom: 0; width: 50.5%;
+  background:
+    repeating-linear-gradient(92deg, rgba(255,255,255,.5) 0 2px, rgba(214,204,186,.14) 2px 4px),
+    linear-gradient(120deg, #fbf7f0, #f2ebdf 45%, #f8f3ea);
+  transition: transform 1.6s cubic-bezier(.66,0,.34,1);
+  will-change: transform;
 }
+.door--l { left: 0;  box-shadow: inset -2px 0 5px -3px rgba(120,108,88,.5); }
+.door--r { right: 0; box-shadow: inset  2px 0 5px -3px rgba(120,108,88,.5); }
+.intro.is-open .door--l { transform: translateX(-100%); }
+.intro.is-open .door--r { transform: translateX(100%); }
+
+/* 새틴 리본 */
+.band, .bow { position: absolute; left: 50%; transition: transform 1s var(--ease), opacity .9s ease-in; }
+.band {
+  top: 50%; width: 100%; height: 30px; transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, #fffdf9, #f2ebdd 45%, #e4d9c6 62%, #fbf7ef);
+  box-shadow: 0 6px 14px -6px rgba(120,108,88,.55);
+}
+.bow { top: 50%; width: 74%; max-width: 300px; transform: translate(-50%, -46%); filter: drop-shadow(0 8px 12px rgba(120,108,88,.28)); }
+.intro.is-untie .band { transform: translate(-50%, 60vh) rotate(-3deg); opacity: 0; }
+.intro.is-untie .bow  { transform: translate(-50%, 60vh) rotate(9deg) scale(.86); opacity: 0; transition-delay: .12s; }
+
+.intro__hint {
+  position: absolute; left: 0; right: 0; bottom: 12%; text-align: center;
+  font-size: 12px; letter-spacing: .3em; color: #8e8574;
+  animation: hintPulse 2s ease-in-out infinite;
+}
+.intro.is-untie .intro__hint { animation: none; opacity: 0; transition: opacity .4s; }
+@keyframes hintPulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+
+/* 커버 애니메이션은 인트로가 끝난 뒤 시작 */
+body:not(.is-ready) :is(.cover__photo img, .cover__label, .cover__names, .cover__date, .cover__place) { animation-play-state: paused; }
 
 /* ══════════════════════════════════════════
    2. Cover
@@ -184,6 +230,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] > * { opacity: 1 !important; transform: none !important; }
   .cover__photo img, .cover__label, .cover__names, .cover__date, .cover__place { animation: none !important; }
+  .intro { display: none; }
 }
 @keyframes fadeUp { from { opacity: 0; transform: translate3d(0,24px,0); } to { opacity: 1; transform: none; } }
 

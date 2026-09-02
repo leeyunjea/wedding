@@ -42,13 +42,47 @@
     document.body.removeChild(ta);
   }
 
-  /* ── 로더 ───────────────────────────────── */
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      $('#loader').classList.add('is-done');
-      setTimeout(function () { $('#loader').style.display = 'none'; }, 900);
-    }, 1100);
-  });
+  /* ── 인트로 (봉투 → 정원 → 커버) ─────────── */
+  (function () {
+    var intro = $('#intro');
+    if (!intro) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      intro.hidden = true; document.body.classList.add('is-ready'); return;
+    }
+    // 단계별 시작 시각(ms). 체인 타이머는 백그라운드 탭에서 스로틀되므로 한 번에 예약
+    var steps = [['is-untie', 0], ['is-open', 1200], ['is-fly', 3000], ['is-done', 6100]];
+    var timers = [], started = false, done = false;
+    var cover = $('.cover__photo img'), page = $('#page');
+    function apply(cls) {
+      // 커버 사진이 아직 안 왔으면 흰 화면(bloom)에서 로드될 때까지 대기
+      if (cls === 'is-done' && cover && !cover.complete) {
+        cover.onload = cover.onerror = function () { apply(cls); };
+        return;
+      }
+      intro.classList.add(cls);
+      if (cls !== 'is-done' || done) return;
+      done = true;
+      page.inert = false;
+      document.body.classList.add('is-ready');
+      document.body.classList.remove('is-locked');
+      setTimeout(function () { intro.hidden = true; }, 1200);
+    }
+    function run(skipMs) { // skipMs: 앞당길 시간. Infinity면 즉시 완료
+      started = true;
+      timers.forEach(clearTimeout);
+      timers = steps.map(function (s) { return setTimeout(apply, Math.max(0, s[1] - skipMs), s[0]); });
+    }
+    document.body.classList.add('is-locked');
+    page.inert = true;
+    timers = [setTimeout(run, 2500, 0)]; // 터치 안 하면 자동으로 열림
+    intro.addEventListener('click', function () {
+      if (!started) run(0);                                         // 터치로 열기
+      else if (intro.classList.contains('is-open')) run(Infinity);  // 정원 이후 터치 = 건너뛰기
+    });
+    intro.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); intro.click(); }
+    });
+  })();
 
   /* ── 스크롤 등장 애니메이션 ──────────────── */
   var io = new IntersectionObserver(function (entries) {
