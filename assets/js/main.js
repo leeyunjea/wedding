@@ -42,7 +42,7 @@
     document.body.removeChild(ta);
   }
 
-  /* ── 인트로 (봉투 → 정원 → 커버) ─────────── */
+  /* ── 인트로 (리본 → 정원 → 커버) ─────────── */
   (function () {
     var intro = $('#intro');
     if (!intro) return;
@@ -50,7 +50,7 @@
       intro.hidden = true; document.body.classList.add('is-ready'); return;
     }
     // 단계별 시작 시각(ms). 체인 타이머는 백그라운드 탭에서 스로틀되므로 한 번에 예약
-    var steps = [['is-untie', 0], ['is-open', 1200], ['is-fly', 3000], ['is-done', 6100]];
+    var steps = [['is-untie', 0], ['is-open', 1200], ['is-gate', 2900], ['is-fly', 4300], ['is-done', 7600]];
     var timers = [], started = false, done = false;
     var cover = $('.cover__photo img'), page = $('#page');
     function apply(cls) {
