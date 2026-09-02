@@ -61,7 +61,7 @@
   </div>
   <div class="door door--l"></div>
   <div class="door door--r"></div>
-  <span class="band"></span>
+  <span class="band"><i></i><i></i></span>
   <svg class="bow" viewBox="0 0 300 170" aria-hidden="true">
     <defs>
       <linearGradient id="bwL" x1=".05" y1="0" x2=".7" y2="1">
@@ -84,25 +84,31 @@
     </defs>
     <g filter="url(#bwS)">
       <!-- 꼬리 -->
-      <path d="M140 78c-12 30-24 54-40 82l24-10 20-46Z" fill="url(#bwT)"/>
-      <path d="M160 78c12 30 24 54 40 82l-24-10-20-46Z" fill="url(#bwT)"/>
-      <!-- 루프 -->
-      <path d="M150 72C120 26 62 24 34 48 12 68 28 100 66 100c40 0 68-12 84-28Z" fill="url(#bwL)"/>
-      <path d="M150 72c30-46 88-48 116-24 22 20 6 52-32 52-40 0-68-12-84-28Z" fill="url(#bwR)"/>
-      <!-- 새틴 하이라이트 -->
-      <g fill="none" stroke="#fff" stroke-linecap="round" opacity=".65">
-        <path d="M138 66C112 40 74 38 50 52" stroke-width="7"/>
-        <path d="M162 66c26-26 64-28 88-14" stroke-width="7"/>
-        <path d="M136 84c-20 6-44 6-58 0" stroke-width="4" opacity=".45"/>
-        <path d="M164 84c20 6 44 6 58 0" stroke-width="4" opacity=".45"/>
+      <g class="bow__tl"><path d="M140 78c-12 30-24 54-40 82l24-10 20-46Z" fill="url(#bwT)"/></g>
+      <g class="bow__tr"><path d="M160 78c12 30 24 54 40 82l-24-10-20-46Z" fill="url(#bwT)"/></g>
+      <!-- 루프 (왼쪽) -->
+      <g class="bow__ll">
+        <path d="M150 72C120 26 62 24 34 48 12 68 28 100 66 100c40 0 68-12 84-28Z" fill="url(#bwL)"/>
+        <g fill="none" stroke="#fff" stroke-linecap="round" opacity=".65">
+          <path d="M138 66C112 40 74 38 50 52" stroke-width="7"/>
+          <path d="M136 84c-20 6-44 6-58 0" stroke-width="4" opacity=".45"/>
+        </g>
+        <path d="M136 62c-14 12-16 26-10 38" fill="none" stroke="#c9bda4" stroke-width="2.5" opacity=".55" stroke-linecap="round"/>
       </g>
-      <!-- 주름 -->
-      <g fill="none" stroke="#c9bda4" stroke-width="2.5" opacity=".55" stroke-linecap="round">
-        <path d="M136 62c-14 12-16 26-10 38"/><path d="M164 62c14 12 16 26 10 38"/>
+      <!-- 루프 (오른쪽) -->
+      <g class="bow__lr">
+        <path d="M150 72c30-46 88-48 116-24 22 20 6 52-32 52-40 0-68-12-84-28Z" fill="url(#bwR)"/>
+        <g fill="none" stroke="#fff" stroke-linecap="round" opacity=".65">
+          <path d="M162 66c26-26 64-28 88-14" stroke-width="7"/>
+          <path d="M164 84c20 6 44 6 58 0" stroke-width="4" opacity=".45"/>
+        </g>
+        <path d="M164 62c14 12 16 26 10 38" fill="none" stroke="#c9bda4" stroke-width="2.5" opacity=".55" stroke-linecap="round"/>
       </g>
       <!-- 매듭 -->
-      <path d="M132 54c10-8 26-8 36 0 8 8 8 26 0 34-10 8-26 8-36 0-8-8-8-26 0-34Z" fill="url(#bwK)"/>
-      <path d="M136 58c8-5 20-5 28 0" fill="none" stroke="#fff" stroke-width="5" opacity=".7" stroke-linecap="round"/>
+      <g class="bow__knot">
+        <path d="M132 54c10-8 26-8 36 0 8 8 8 26 0 34-10 8-26 8-36 0-8-8-8-26 0-34Z" fill="url(#bwK)"/>
+        <path d="M136 58c8-5 20-5 28 0" fill="none" stroke="#fff" stroke-width="5" opacity=".7" stroke-linecap="round"/>
+      </g>
     </g>
   </svg>
   </div>
