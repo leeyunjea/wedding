@@ -90,13 +90,6 @@ body {
 }
 .intro.is-fly .garden { transform: perspective(1500px) rotateX(0deg) scale(3.1); }
 
-/* 창살문 — 바깥쪽 기둥을 축으로 안쪽으로 열림 (그림의 열린 문짝을 계속 덮고 있음) */
-.gate { transition: transform 1.7s cubic-bezier(.45,0,.2,1); }
-.gate--l { transform-origin: 216px 430px; }
-.gate--r { transform-origin: 572px 430px; }
-.intro.is-gate .gate--l { transform: scaleX(.55) skewY(-2.5deg); }
-.intro.is-gate .gate--r { transform: scaleX(.55) skewY(2.5deg); }
-
 .intro__bloom {
   position: absolute; inset: 0; opacity: 0;
   background: radial-gradient(circle at 50% 24%, #fff 0, rgba(255,255,255,.98) 30%, rgba(255,255,255,.92) 70%, rgba(255,255,255,.88) 100%);
