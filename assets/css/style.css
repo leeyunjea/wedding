@@ -185,6 +185,10 @@ body {
   font-size: 12px; letter-spacing: .3em; color: #8e8574;
   animation: hintPulse 2s ease-in-out infinite;
 }
+.intro__hint span {
+  display: block; margin-top: 7px;
+  font-size: 10px; letter-spacing: .2em; opacity: .75;
+}
 .intro.is-untie .intro__hint { animation: none; opacity: 0; transition: opacity .4s; }
 @keyframes hintPulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
 
